@@ -1,0 +1,199 @@
+.forms {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icons {
+  font-size: 50px;
+}
+
+.icons2 {
+  font-size: 100px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+
+
+/* Estilo para o container principal */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Isso fará com que o container ocupe toda a altura da tela */
+  /* background-color: #f0f0f0; */
+  /* Cor de fundo da página de destino */
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilo para a seção de destaque (hero-section) */
+.hero-section {
+  text-align: center;
+  padding: 20px;
+  /* background-color: #fff; */
+  /* Cor de fundo da seção de destaque */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o título */
+.hero-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o texto descritivo */
+.hero-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para os botões */
+.hero-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Estilo para o botão primário */
+.hero-section .btn-primary {
+  background-color: #007bff;
+  /* Cor de fundo do botão primário */
+  color: #fff;
+  /* Cor do texto do botão primário */
+}
+
+/* Estilo para o botão secundário */
+.hero-section .btn-secondary {
+  background-color: #6c757d;
+  /* Cor de fundo do botão secundário */
+  color: #fff;
+  /* Cor do texto do botão secundário */
+}
+
+/* Estilo para os links dentro dos botões */
+.hero-section a {
+  text-decoration: none;
+  /* color: inherit; */
+}
+
+.cliente {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.cards-client {
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  font-size: 100vh;
+  font-weight: bold;
+}
+
+body {
+  background-color: #27303b;
+  color: #fff !important;
+}
+
+Form label {
+  color: #fff !important;
+  font-size: 20px !important;
+  margin-right: 20px !important;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  width: 250px;
+  height: 150px;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  /* background-color: #fff;
+  color: #333;  */
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #27303b;
+}
+
+.link,
+Link,
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+rules {
+  width: 200px;
+}
+.btn-app-dn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards-request {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Isso distribuirá os cards igualmente nas linhas */
+}
+
+.card {
+  margin-left: 5px;
+  margin-bottom: 16px;
+  /* Outros estilos para os cards, como espaçamento interno, bordas, etc. */
+}
+
+.linksaida {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
