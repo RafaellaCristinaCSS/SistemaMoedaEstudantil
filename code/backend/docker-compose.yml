@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  database:
+    image: postgres:10.17
+    restart: always
+    container_name: 'lab_moedas'
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: 'lab_moedas'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - '5436:5432'
+volumes:
+  pg-data:
