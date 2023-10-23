@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { Card } from "antd";
 import {
-  CarOutlined,
-  CreditCardOutlined,
-  IdcardOutlined,
+  FileTextOutlined,
+  DollarOutlined
 } from "@ant-design/icons";
 // import "../styles/agente_style.css"; // Importe o arquivo CSS aqui
 
@@ -20,21 +19,21 @@ export default function Home() {
         Sair
       </Link>
 
-      <h1 className="title">Seja bem-vindo Agente!</h1>
+      <h1 className="title">Seja bem-vindo Professor!</h1>
 
-      <Link href={"/carros"} className="link">
+      <Link href={"/sendCoin"} className="link">
         <Card className="cards" hoverable>
-          <CarOutlined className="icons" />
+        <DollarOutlined className="icons" />
           <br />
-          Cadastre um carro
+          Envie Moedas
         </Card>
       </Link>
 
-      <Link href={"/request"} className="link">
+      <Link href={"/extratoProfessor"} className="link">
         <Card className="cards" hoverable>
-          <IdcardOutlined className="icons" />
+        <FileTextOutlined className="icons" />
           <br />
-          Aprovar pedidos
+          Extrato
         </Card>
       </Link>
     </div>
