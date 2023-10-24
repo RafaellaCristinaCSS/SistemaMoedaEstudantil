@@ -14,6 +14,7 @@ export class UserDTO {
   address: string;
   course: string;
   university: string;
+  coins: number;
 }
 
 export function userToUserDTO(user: User): UserDTO {
@@ -26,5 +27,6 @@ export function userToUserDTO(user: User): UserDTO {
     address: user.address,
     course: user.course,
     university: user.university,
+    coins: user.coins,
   });
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../entity/user.entity';
 import { Repository } from 'typeorm';
@@ -17,5 +17,18 @@ export class UserService {
   }
   async createUser(user: User): Promise<User> {
     return this.userRepository.save(user);
+  }
+
+  async removeCoinsToUser(user: User, valueDecreased: number): Promise<void> {
+    user.coins -= valueDecreased;
+    if (user.coins < 0) {
+      throw new BadRequestException('the coins cannot be less than zero');
+    }
+    await this.userRepository.save(user);
+  }
+
+  async addCoins(user: User, valueAdded: number): Promise<void> {
+    user.coins += valueAdded;
+    await this.userRepository.save(user);
   }
 }

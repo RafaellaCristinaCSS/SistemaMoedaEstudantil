@@ -33,4 +33,7 @@ export class User {
   university: string;
   @Column({ type: 'varchar', length: 255 })
   address: string;
+
+  @Column({ type: 'integer' })
+  coins: number;
 }
