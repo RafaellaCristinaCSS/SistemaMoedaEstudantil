@@ -25,6 +25,7 @@ export class InitialSetup1694045191361 implements MigrationInterface {
         student_id UUID,
         teacher_id UUID,
         value integer DEFAULT 0,
+        reason varchar(255),
         FOREIGN KEY (student_id) REFERENCES "user" (id),
         FOREIGN KEY (teacher_id) REFERENCES "user" (id)
       );

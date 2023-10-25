@@ -30,4 +30,7 @@ export class Transfer {
   teacher: User;
   @Column({ type: 'integer' })
   value: number;
+
+  @Column({ type: 'varchar' })
+  reason: string;
 }
