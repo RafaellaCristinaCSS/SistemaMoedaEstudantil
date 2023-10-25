@@ -5,6 +5,7 @@ export class TransferDTO {
   value: number;
   student: UserDTO;
   teacher: UserDTO;
+  reason: string;
 }
 
 export function transferToTransferDTO(transfer: Transfer): TransferDTO {
@@ -12,5 +13,6 @@ export function transferToTransferDTO(transfer: Transfer): TransferDTO {
     value: transfer.value,
     teacher: userToUserDTO(transfer.teacher),
     student: userToUserDTO(transfer.student),
+    reason: transfer.reason,
   };
 }

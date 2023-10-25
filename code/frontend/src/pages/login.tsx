@@ -20,6 +20,8 @@ const App: React.FC = () => {
         headers,
       });
 
+      localStorage.setItem("id", userInfo.data.id);
+
       console.log(userInfo);
       if (userInfo.data.role === "company") {
         router.push(`/company`);
