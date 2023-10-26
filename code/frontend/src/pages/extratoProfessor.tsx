@@ -3,6 +3,7 @@ import { Card } from "antd";
 import axios from "axios";
 import Link from "next/link";
 import { ArrowLeftOutlined } from "@ant-design/icons";
+import { randomUUID } from "crypto";
 
 const App: React.FC = () => {
   // interface CarDTO {
@@ -108,6 +109,56 @@ const App: React.FC = () => {
   //   </Card>
   // ))}
 
+  interface RentRequestDTO {
+    coins: number;
+    id: string;
+  }
+
+  interface RentRequestDTO2 {
+    coins: number;
+  }
+
+  const [requestInfo, setRequestInfo] = useState<any[]>([]);
+  const [coinsValue, setCoins] = useState();
+
+  useEffect(() => {
+    const getInfos = async () => {
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      };
+      const response = await axios.get(
+        `http://localhost:5500/user/${localStorage.getItem("id")}`,
+        { headers }
+      );
+
+      console.log(response.data);
+
+      setCoins(response.data.coins);
+    };
+
+    getInfos();
+  }, []);
+
+  useEffect(() => {
+    async function fetchRequest() {
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      };
+      const response = await axios.get(
+        `http://localhost:5500/transfer/teacher/${localStorage.getItem("id")}`,
+        {
+          headers,
+        }
+      );
+
+      console.log(response.data);
+      setRequestInfo(response.data);
+    }
+
+    fetchRequest();
+  }, []);
 
   return (
     <div className="">
@@ -118,14 +169,21 @@ const App: React.FC = () => {
         <h1 className="font-bold text-3xl">Extrato</h1>
 
         <div className="flex gap-4 font-bold text-2xl">
-          <h3>Seu saldo:</h3> <span>30</span>
+          <h3>Seu saldo:</h3> <span>{coinsValue}</span>
         </div>
 
-        <Card title="-3 Moedas" bordered={false} style={{ width: 500 }}>
-          <p>23/05/2023</p>
-          <p>Motivos aqui</p>
-          <p>Para o aluno Jose</p>
-        </Card>
+        {requestInfo.map((r) => (
+          <Card
+            title={" Moedas " + r.value}
+            bordered={false}
+            style={{ width: 500 }}
+            key={r.value}
+          >
+            <p>Moedas enviadas: {r.value}</p>
+            {/* <p>Motivos aqui</p> */}
+            <p>Para o aluno {r.student.name}</p>
+          </Card>
+        ))}
       </div>
     </div>
   );

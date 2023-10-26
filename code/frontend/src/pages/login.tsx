@@ -20,11 +20,14 @@ const App: React.FC = () => {
         headers,
       });
 
-      console.log(userInfo);
+      localStorage.setItem("id", userInfo.data.id);
+
       if (userInfo.data.role === "company") {
         router.push(`/company`);
-      } else {
+      } else if (userInfo.data.role === "student") {
         router.push(`/student`);
+      } else if (userInfo.data.role === "teacher") {
+        router.push(`/teacher`);
       }
 
       return response.data;
