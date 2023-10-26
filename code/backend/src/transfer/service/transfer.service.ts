@@ -28,6 +28,7 @@ export class TransferService {
       student: student,
       teacher: teacher,
       value: createTransferDTO.value,
+      reason: createTransferDTO.reason,
     });
     await Promise.all([
       this.userService.removeCoinsToUser(teacher, createTransferDTO.value),
