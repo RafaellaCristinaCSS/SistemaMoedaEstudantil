@@ -1,10 +1,7 @@
 import { Card } from "antd";
 import Link from "next/link";
 import React from "react";
-import {
-    FileTextOutlined,
-    DollarOutlined
-  } from "@ant-design/icons";
+import { FileTextOutlined, AppstoreAddOutlined } from "@ant-design/icons";
 
 const Student: React.FC = () => {
   return (
@@ -20,6 +17,14 @@ const Student: React.FC = () => {
       </Link>
 
       <h1 className="title">Seja bem-vindo Estudante!</h1>
+
+      <Link href={"/trocaVantagens"} className="link">
+        <Card className="cards" hoverable>
+          <AppstoreAddOutlined className="icons" />
+          <br />
+          Adquira Vantagens
+        </Card>
+      </Link>
 
       <Link href={"/extratoAluno"} className="link">
         <Card className="cards" hoverable>
