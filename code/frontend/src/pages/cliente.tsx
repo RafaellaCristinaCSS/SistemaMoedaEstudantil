@@ -57,7 +57,7 @@ const App: React.FC = () => {
         } else if (status === "denied") {
             return "red"; // Red background for denied
         } else {
-            return "transparent"; // Default transparent background
+            return "#020202"; // Default transparent background
         }
     }
 

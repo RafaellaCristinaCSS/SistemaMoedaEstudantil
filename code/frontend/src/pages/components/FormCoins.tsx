@@ -98,7 +98,7 @@ const FormCoin: React.FC = () => {
         >
           <Select
             defaultValue="lucy"
-            style={{ width: 120 }}
+            style={{marginLeft: "-26%"}}
             onChange={handleChange}
             options={[
               { value: "jack", label: "Jack" },
@@ -114,7 +114,9 @@ const FormCoin: React.FC = () => {
           name="reason"
           rules={[{ required: true, message: "Selecione um motivo!" }]}
         >
-          <TextArea rows={5} />
+          <TextArea rows={5} 
+          style={{marginLeft: "-26%"}}
+          />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 10, span: 20 }}>

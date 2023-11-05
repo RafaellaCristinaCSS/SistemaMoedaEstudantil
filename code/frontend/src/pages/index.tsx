@@ -4,7 +4,7 @@ import {CarTwoTone, EuroOutlined} from "@ant-design/icons";
 
 export default function LandingPage() {
   return (
-    <div className="landing-page">
+    <div className="landing-page formsGeral forms">
       <div className="hero-section">
         <h1>Sistema de Moedas</h1>
         <p>Estimule o reconhecimento do mérito   estudantil através de uma moeda virtual!</p>

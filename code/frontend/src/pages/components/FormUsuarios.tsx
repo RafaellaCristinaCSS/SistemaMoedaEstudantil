@@ -73,7 +73,6 @@ function FormUsuarios() {
         name="basic"
         labelCol={{ span: 13 }}
         wrapperCol={{ span: 118 }}
-        style={{ maxWidth: 600 }}
         initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -96,7 +95,7 @@ function FormUsuarios() {
               <Input />
             </Form.Item>
             <Form.Item<FieldType>
-              label="cpf"
+              label="CPF"
               name="cpf"
               rules={[{ required: true, message: "Digite o cpf!" }]}
             >
@@ -169,7 +168,7 @@ function FormUsuarios() {
                 <Input />
               </Form.Item>
               <Form.Item<FieldType>
-                  label="cnpj"
+                  label="CNPJ"
                   name="cpf"
                   rules={[{ required: true, message: "Digite o cnpj!" }]}
               >
