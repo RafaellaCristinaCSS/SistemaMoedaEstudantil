@@ -46,8 +46,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="forms">
-      <h1 className="title">Faça seu Login:</h1>
+    <div className="forms formsGeral">
+      <h1 className="title">Login:</h1>
 
       <Form
         name="basic"

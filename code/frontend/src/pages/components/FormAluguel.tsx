@@ -17,6 +17,8 @@ type FieldType = {
 };
 
 const FormCarros: React.FC = () => (
+  <div className="formsPage formsGeral">
+     <h1 className="title">Cadastre o Aluguel</h1>
   <Form
     name="basic"
     labelCol={{ span: 13 }}
@@ -62,6 +64,7 @@ const FormCarros: React.FC = () => (
       </Button>
     </Form.Item>
   </Form>
+  </div>
 );
 
 export default FormCarros;

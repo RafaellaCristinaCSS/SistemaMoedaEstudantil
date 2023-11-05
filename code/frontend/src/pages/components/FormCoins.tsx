@@ -68,7 +68,8 @@ const FormCoin: React.FC = () => {
   return (
     <>
       {showAlert && <AlertSucess />}
-
+    <div className="formsPage formsGeral">
+    <h1 className="title">Envie Moedas</h1>
       <Form
         name="basic"
         labelCol={{ span: 16 }}
@@ -122,6 +123,7 @@ const FormCoin: React.FC = () => {
           </Button>
         </Form.Item>
       </Form>
+      </div>
     </>
   );
 };

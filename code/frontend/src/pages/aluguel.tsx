@@ -9,7 +9,6 @@ export default function Home() {
         <ArrowLeftOutlined /> Voltar
       </Link>
       <div className="forms">
-        <h1 className="title">Cadastre o Aluguel</h1>
         <FormAluguel />
       </div>
     </div>

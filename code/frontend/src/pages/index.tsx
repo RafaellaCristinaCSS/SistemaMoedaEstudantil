@@ -13,7 +13,7 @@ export default function LandingPage() {
           {/*<CarTwoTone  />*/}
         </p>
         <button className="btn btn-primary">
-          <Link href={"/login"}>Faça o Login</Link>
+          <Link href={"/login"}>Login</Link>
         </button>
         <button className="btn btn-secondary">
           <Link href={"/cadastro"}>Cadastre-se</Link>
