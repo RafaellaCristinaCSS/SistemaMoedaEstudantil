@@ -23,31 +23,24 @@ export default function Home() {
   };
 
   const OnFinish = async (values: any) => {
-    console.log(values);
+    console.log('klsakas');
+    console.log(values)
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     };
-    const studentInfo = await axios.get(
-      `http://localhost:5500/user/name/${values.student}`,
-      {
-        headers,
-      }
-    );
-    console.log(studentInfo);
 
     try {
       await axios.post(
-        `http://localhost:5500/transfer`,
+        `http://localhost:5500/advantage`,
         {
-          value: values.coin,
-          student_id: studentInfo.data.id,
-          teacher_id: localStorage.getItem("id"),
-          reason: values.reason,
+          value: values.value,
+          name: values.name,
+          description: values.description,
         },
         { headers }
       );
-      await router.push(`/teacher`);
+      await router.push(`/company`);
     } catch (e) {
       console.log(e);
     }
@@ -92,12 +85,12 @@ export default function Home() {
             ]}
             className="flex gap-10"
           >
-            <InputNumber min={1} max={10000} />
+            <Input />
           </Form.Item>
 
           <Form.Item
             label="Valor"
-            name="valor"
+            name="value"
             rules={[{ required: true, message: "Digite um valor!" }]}
           >
             <InputNumber min={0} />
@@ -105,32 +98,32 @@ export default function Home() {
 
           <Form.Item
             label="Descrição"
-            name="reason"
+            name="description"
             rules={[{ required: true, message: "Selecione um motivo!" }]}
           >
             <TextArea rows={5} />
           </Form.Item>
 
-          <Form.Item label="Dragger">
-            <Form.Item
-              name="dragger"
-              valuePropName="fileList"
-              getValueFromEvent={normFile}
-              noStyle
-            >
-              <Upload.Dragger name="files" action="/upload.do">
-                <p className="ant-upload-drag-icon">
-                  <InboxOutlined />
-                </p>
-                <p className="ant-upload-text">
-                  Click or drag file to this area to upload
-                </p>
-                <p className="ant-upload-hint">
-                  Support for a single or bulk upload.
-                </p>
-              </Upload.Dragger>
-            </Form.Item>
-          </Form.Item>
+          {/*<Form.Item label="Dragger">*/}
+          {/*  <Form.Item*/}
+          {/*    name="dragger"*/}
+          {/*    valuePropName="fileList"*/}
+          {/*    getValueFromEvent={normFile}*/}
+          {/*    noStyle*/}
+          {/*  >*/}
+          {/*    <Upload.Dragger name="files" action="/upload.do">*/}
+          {/*      <p className="ant-upload-drag-icon">*/}
+          {/*        <InboxOutlined />*/}
+          {/*      </p>*/}
+          {/*      <p className="ant-upload-text">*/}
+          {/*        Click or drag file to this area to upload*/}
+          {/*      </p>*/}
+          {/*      <p className="ant-upload-hint">*/}
+          {/*        Support for a single or bulk upload.*/}
+          {/*      </p>*/}
+          {/*    </Upload.Dragger>*/}
+          {/*  </Form.Item>*/}
+          {/*</Form.Item>*/}
 
           <Form.Item wrapperCol={{ offset: 10, span: 20 }}>
             <Button type="primary" htmlType="submit" className="bg-blue-600">
