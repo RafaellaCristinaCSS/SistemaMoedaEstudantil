@@ -47,13 +47,10 @@ const App: React.FC = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       };
-      const response = await axios.get(
-        `http://localhost:5500/transfer/teacher/${localStorage.getItem("id")}`,
-        {
-          headers,
-        }
-      );
-
+      const response = await axios.get(`http://localhost:5500/advantage`, {
+        headers,
+      });
+      console.log("aqui");
       console.log(response.data);
       setRequestInfo(response.data);
     }
@@ -81,37 +78,27 @@ const App: React.FC = () => {
         ) : (
           requestInfo.map((r) => (
             <Card
-              title={" Moedas " + r.value}
+              title={r.value}
               bordered={false}
               style={{ width: 500 }}
+              className="gap-2 flex flex-col"
               key={r.value}
             >
-              <p>Moedas enviadas: {r.value}</p>
+              <p>{r.value}</p>
               {/* <p>Motivos aqui</p> */}
-              <p>Para o aluno {r.student.name}</p>
+              <p>{r.value}</p>
+              <div className="flex">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="bg-blue-600  self-end ml-auto"
+                >
+                  Adquirir
+                </Button>
+              </div>
             </Card>
           ))
         )}
-
-        <Card
-          title="Desconto Udemy"
-          bordered={false}
-          style={{ width: 500 }}
-          className="gap-2 flex flex-col"
-        >
-          <p>ganha desconto de 30% na udemy</p>
-          {/* <p>Motivos aqui</p> */}
-          <p>Valor 30 moedas</p>
-          <div className="flex">
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="bg-blue-600  self-end ml-auto"
-            >
-              Adquirir
-            </Button>
-          </div>
-        </Card>
       </div>
     </div>
   );
