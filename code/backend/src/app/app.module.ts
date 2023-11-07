@@ -8,7 +8,8 @@ import { HttpExceptionFilter } from '../core/errors/http-exception.filters';
 import { RolesGuard } from '../core/roles/roles.guard';
 import { CarModule } from '../car/module/car.module';
 import { RentRequestModule } from '../rent-request/module/rent-request.module';
-import {TransferModule} from "../transfer/module/transfer.module";
+import { TransferModule } from '../transfer/module/transfer.module';
+import { AdvantageModule } from '../advantage/module/advantage.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import {TransferModule} from "../transfer/module/transfer.module";
     AuthModule,
     CarModule,
     TransferModule,
+    AdvantageModule,
     RentRequestModule,
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService,

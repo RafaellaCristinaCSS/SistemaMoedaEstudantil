@@ -4,7 +4,7 @@ services:
   database:
     image: postgres:10.17
     restart: always
-    container_name: 'lab_moedas'
+    container_name: 'postgres_sandbox'
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
