@@ -58,7 +58,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="forms formsGeral">
       <Link href={"/teacher"} className="linksaida">
         <ArrowLeftOutlined /> Voltar
       </Link>

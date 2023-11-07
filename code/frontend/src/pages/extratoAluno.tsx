@@ -60,7 +60,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="forms formsGeral">
       <Link href={"/student"} className="linksaida">
         <ArrowLeftOutlined /> Voltar
       </Link>

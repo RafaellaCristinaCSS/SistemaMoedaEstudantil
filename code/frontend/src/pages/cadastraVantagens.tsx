@@ -58,7 +58,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-between items-center gap-14 font-normal">
+    <div className="flex flex-col justify-between items-center gap-14 font-normal formsPage formsGeral">
       <Link href={"/company"}>
         <ArrowLeftOutlined /> Voltar
       </Link>

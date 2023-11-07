@@ -8,7 +8,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="forms">
+    <div className="formsPage formsGeral">
       <Link
         className="linksaida"
         onClick={() => {

@@ -132,7 +132,7 @@ const App: React.FC = () => {
   }, [reload]);
 
   return (
-    <div className="cliente">
+    <div className="cliente formsPage formsGeral">
       <Link
         className="linksaida"
         onClick={() => {

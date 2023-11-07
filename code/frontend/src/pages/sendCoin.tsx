@@ -83,7 +83,7 @@ export default function Home() {
     };
 
       return (
-        <div className="flex flex-col justify-between items-center gap-14 font-normal">
+        <div className="flex flex-col justify-between items-center gap-14 font-normal formsPage formsGeral">
           <Link href={"/teacher"}>
             <ArrowLeftOutlined /> Voltar
           </Link>
@@ -121,7 +121,7 @@ export default function Home() {
                       rules={[{ required: true, message: "Selecione um aluno!" }]}
                   >
                       <Select
-                          style={{ width: 120 }}
+                          style={{ width: 120,marginLeft: "-25%"}}
                           options={studentsNames}
                       />
                   </Form.Item>
@@ -131,7 +131,8 @@ export default function Home() {
                       name="reason"
                       rules={[{ required: true, message: "Selecione um motivo!" }]}
                   >
-                      <TextArea rows={5} />
+                      <TextArea rows={5}
+                       style={{ marginLeft: "-25%"}} />
                   </Form.Item>
 
                   <Form.Item wrapperCol={{ offset: 10, span: 20 }}>

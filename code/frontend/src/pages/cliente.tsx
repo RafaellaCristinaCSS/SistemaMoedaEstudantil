@@ -116,7 +116,7 @@ const App: React.FC = () => {
     }, [reload]);
 
  return(
-     <div className="cliente">
+     <div className="cliente formsPage formsGeral">
          <div className="cards-client">
              <h1 className="title">Veja novos alugeis:</h1>
              <Space direction="vertical" size={16}>

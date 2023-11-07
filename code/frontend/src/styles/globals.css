@@ -91,6 +91,9 @@
   color: #fff;
   /* Cor do texto do botão primário */
 }
+h1, h3, p{
+  color: #020202;
+}
 button{
   background-color: #007bff !important;
   

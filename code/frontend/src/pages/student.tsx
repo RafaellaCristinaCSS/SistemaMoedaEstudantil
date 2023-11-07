@@ -5,7 +5,7 @@ import { FileTextOutlined, AppstoreAddOutlined } from "@ant-design/icons";
 
 const Student: React.FC = () => {
   return (
-    <div className="forms">
+    <div className="formsPage formsGeral">
       <Link
         className="linksaida"
         onClick={() => {
