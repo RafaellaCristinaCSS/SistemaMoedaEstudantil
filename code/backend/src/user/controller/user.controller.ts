@@ -11,6 +11,11 @@ import { CreateUserDTO, createUserDTOToUser } from '../dto/create-user.dto';
 import { UserDTO, userToUserDTO } from '../dto/user.dto';
 import { UserService } from '../service/user.service';
 import { User } from '../entity/user.entity';
+import { AssociateUserAdvantageDTO } from '../dto/associate-user-advantage.dto';
+import {
+  AdvantageDTO,
+  advantageToAdvantageDTO,
+} from '../../advantage/dto/advantage.dto';
 
 @Controller('/user')
 export class UserController {
@@ -20,7 +25,7 @@ export class UserController {
   async createUser(
     @Body(ValidationPipe) body: CreateUserDTO,
   ): Promise<UserDTO> {
-    const user = await this.userService.createUser(createUserDTOToUser(body));
+    const user = await this.userService.saveUser(createUserDTOToUser(body));
     return userToUserDTO(user);
   }
 
@@ -40,7 +45,19 @@ export class UserController {
 
   @Get()
   async getAllStudents(): Promise<User[]> {
-    const user = await this.userService.getAllStudents();
-    return user;
+    return await this.userService.getAllStudents();
+  }
+
+  @Post('/add/advantage')
+  async associateAdvantage(
+    @Body(ValidationPipe) body: AssociateUserAdvantageDTO,
+  ): Promise<void> {
+    await this.userService.associateAdvantage(body);
+  }
+
+  @Get('/:id/advantage')
+  async getUserAdvantages(@Param('id') id: string): Promise<AdvantageDTO[]> {
+    const advantages = await this.userService.getUserAdvantages(id);
+    return advantages.map((a) => advantageToAdvantageDTO(a));
   }
 }
