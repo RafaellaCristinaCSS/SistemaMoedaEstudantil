@@ -23,8 +23,6 @@ export default function Home() {
   };
 
   const OnFinish = async (values: any) => {
-    console.log('klsakas');
-    console.log(values)
     const headers = {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -56,11 +54,6 @@ export default function Home() {
         <ArrowLeftOutlined /> Voltar
       </Link>
       <h1 className="title font-bold">Cadastre uma vantagem</h1>
-
-      <div className="flex flex-row gap-5 text-2xl font-bold">
-        <h1>Seu saldo:</h1>
-        <span>{coins}</span>
-      </div>
 
       <div>
         <Form

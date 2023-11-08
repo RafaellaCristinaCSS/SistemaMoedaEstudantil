@@ -78,15 +78,14 @@ const App: React.FC = () => {
         ) : (
           requestInfo.map((r) => (
             <Card
-              title={r.value}
+              title={r.name}
               bordered={false}
               style={{ width: 500 }}
               className="gap-2 flex flex-col"
-              key={r.value}
+              key={r.id}
             >
-              <p>{r.value}</p>
-              {/* <p>Motivos aqui</p> */}
-              <p>{r.value}</p>
+              <p>Motivos: {r.description}</p>
+              <p>Valor: {r.value}</p>
               <div className="flex">
                 <Button
                   type="primary"
