@@ -1,7 +1,7 @@
 import { Card } from "antd";
 import Link from "next/link";
 import React from "react";
-import { FileTextOutlined, AppstoreAddOutlined } from "@ant-design/icons";
+import { FileTextOutlined, AppstoreAddOutlined, CheckOutlined } from "@ant-design/icons";
 
 const Student: React.FC = () => {
   return (
@@ -33,6 +33,15 @@ const Student: React.FC = () => {
           Extrato
         </Card>
       </Link>
+
+      <Link href={"/minhasVantagens"} className="link">
+         <Card className="cards" hoverable>
+            <CheckOutlined className="icons" />
+             <br />
+             Minhas Vantagens
+         </Card>
+      </Link>
+
     </div>
   );
 };
