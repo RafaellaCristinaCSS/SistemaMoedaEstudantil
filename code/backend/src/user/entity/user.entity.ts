@@ -1,6 +1,12 @@
-import {Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Role } from '../../core/roles/roles.enum';
-import {Advantage} from "../../advantage/entity/advantage.entity";
+import { Advantage } from '../../advantage/entity/advantage.entity';
 
 @Entity()
 export class User {
@@ -38,7 +44,7 @@ export class User {
   @Column({ type: 'integer' })
   coins: number;
 
-  @ManyToMany(() => Advantage, (advantage) => advantage)
+  @ManyToMany(() => Advantage, (advantage) => advantage, { eager: true })
   @JoinTable({
     name: 'advantage_user',
     joinColumn: { name: 'user_id' },

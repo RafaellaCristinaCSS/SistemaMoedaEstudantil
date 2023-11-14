@@ -4,17 +4,32 @@ import axios from "axios";
 import Link from "next/link";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { FileSearchOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 import { Button } from "antd";
 
 const App: React.FC = () => {
-  interface RentRequestDTO {
-    coins: number;
-    id: string;
-  }
 
-  interface RentRequestDTO2 {
-    coins: number;
+  const router = useRouter();
+
+  // AQUII
+  const onFinish = async (advantageId: string) => {
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    };
+    try {
+      await axios.post(
+          `http://localhost:5500/user/add/advantage`,
+          {
+            user_id: localStorage.getItem('id'),
+            advantage_id: advantageId
+          },
+          {headers});
+        router.push(`/minhasVantagens`);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   const [requestInfo, setRequestInfo] = useState<any[]>([]);
@@ -87,10 +102,12 @@ const App: React.FC = () => {
               <p>Motivos: {r.description}</p>
               <p>Valor: {r.value}</p>
               <div className="flex">
+
                 <Button
                   type="primary"
                   htmlType="submit"
                   className="bg-blue-600  self-end ml-auto"
+                  onClick={() => onFinish(r.id)}
                 >
                   Adquirir
                 </Button>
