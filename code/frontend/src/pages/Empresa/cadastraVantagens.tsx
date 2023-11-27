@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FormCarros from "./components/FormCoins";
+import FormCarros from "../components/FormCoins";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Select, Space, InputNumber, Form, Button, Input, Upload } from "antd";
 const { TextArea } = Input;
@@ -96,27 +96,6 @@ export default function Home() {
           >
             <TextArea rows={5} />
           </Form.Item>
-
-          {/*<Form.Item label="Dragger">*/}
-          {/*  <Form.Item*/}
-          {/*    name="dragger"*/}
-          {/*    valuePropName="fileList"*/}
-          {/*    getValueFromEvent={normFile}*/}
-          {/*    noStyle*/}
-          {/*  >*/}
-          {/*    <Upload.Dragger name="files" action="/upload.do">*/}
-          {/*      <p className="ant-upload-drag-icon">*/}
-          {/*        <InboxOutlined />*/}
-          {/*      </p>*/}
-          {/*      <p className="ant-upload-text">*/}
-          {/*        Click or drag file to this area to upload*/}
-          {/*      </p>*/}
-          {/*      <p className="ant-upload-hint">*/}
-          {/*        Support for a single or bulk upload.*/}
-          {/*      </p>*/}
-          {/*    </Upload.Dragger>*/}
-          {/*  </Form.Item>*/}
-          {/*</Form.Item>*/}
 
           <Form.Item wrapperCol={{ offset: 10, span: 20 }}>
             <Button type="primary" htmlType="submit" className="bg-blue-600">

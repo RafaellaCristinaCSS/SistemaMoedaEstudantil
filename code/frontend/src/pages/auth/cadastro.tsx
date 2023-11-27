@@ -1,4 +1,4 @@
-import FormUsuarios from "./components/FormUsuarios";
+import FormUsuarios from "../components/FormUsuarios";
 
 export default function Home() {
   return (
