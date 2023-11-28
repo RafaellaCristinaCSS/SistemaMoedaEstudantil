@@ -1,10 +1,10 @@
 import Link from "next/link";
-import FormCarros from "./components/FormCoins";
+import FormCarros from "../components/FormCoins";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { Select, Space, InputNumber, Form, Button, Input } from "antd";
 const { TextArea } = Input;
 
-import FormCoin from "./components/FormCoins";
+import FormCoin from "../components/FormCoins";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -16,7 +16,7 @@ export default function Home() {
   const [studentsNames, setStudentsNames] = useState([]);
 
   useEffect(() => {
-    const headers = {
+    const headers = { 
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     };

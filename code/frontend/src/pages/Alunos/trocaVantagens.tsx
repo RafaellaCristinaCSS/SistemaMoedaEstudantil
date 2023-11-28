@@ -9,10 +9,10 @@ import { useRouter } from "next/router";
 import { Button } from "antd";
 
 const App: React.FC = () => {
-
+  const [requestInfo, setRequestInfo] = useState<any[]>([]);
+  const [coinsValue, setCoins] = useState();
   const router = useRouter();
 
-  // AQUII
   const onFinish = async (advantageId: string) => {
     const headers = {
       "Content-Type": "application/json",
@@ -20,20 +20,17 @@ const App: React.FC = () => {
     };
     try {
       await axios.post(
-          `http://localhost:5500/user/add/advantage`,
-          {
-            user_id: localStorage.getItem('id'),
-            advantage_id: advantageId
-          },
-          {headers});
-        router.push(`/minhasVantagens`);
+        `http://localhost:5500/user/add/advantage`,
+        {
+          user_id: localStorage.getItem('id'),
+          advantage_id: advantageId
+        },
+        { headers });
+      router.push(`/minhasVantagens`);
     } catch (e) {
       console.log(e);
     }
   }
-
-  const [requestInfo, setRequestInfo] = useState<any[]>([]);
-  const [coinsValue, setCoins] = useState();
 
   useEffect(() => {
     const getInfos = async () => {
